@@ -1,0 +1,274 @@
+/* ==========================================================================
+   Ace Party & Tent Rental - Brand Design Tokens
+   Source: Figma file Mr6M1UwQ0i45tEOMHSHe6G (Direction A)
+   ==========================================================================
+
+   This file defines brand-specific CSS custom properties and utility classes
+   that layer on top of Dawn's default theme system. It is loaded AFTER base.css
+   in theme.liquid.
+
+   Font loading (@font-face for Geoform and Zodiak) is handled in theme.liquid
+   via a snippet, not in this file.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Brand Color Tokens
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Primary */
+  --ace-primary-blue: #005cba;
+  --ace-secondary-red: #ff595a;
+  --ace-secondary-yellow: #fcd199;
+  --ace-tertiary-yellow: #fdefdc;
+  --ace-text-blue: #063666;
+
+  /* Neutrals */
+  --ace-white: #ffffff;
+  --ace-black: #000000;
+  --ace-bg-taupe: #fdfcf8;
+  --ace-bg-gray: #f0f0f0;
+
+  /* Interaction */
+  --ace-button-hover: #ffaeaf;
+
+  /* Gradient */
+  --ace-gradient-footer: linear-gradient(to right, #0c6bcd, #387fd7);
+
+  /* --------------------------------------------------------------------------
+     2. Typography Tokens
+     -------------------------------------------------------------------------- */
+
+  --ace-font-heading: 'Geoform', 'Montserrat', sans-serif;
+  --ace-font-body: 'Zodiak', Georgia, serif;
+
+  /* --------------------------------------------------------------------------
+     3. Spacing & Layout Tokens
+     -------------------------------------------------------------------------- */
+
+  --ace-radius-button: 8px;
+  --ace-radius-image: 24px;
+  --ace-radius-search: 22px;
+
+  --ace-nav-height: 80px;
+  --ace-promo-height: 40px;
+  --ace-button-height: 40px;
+  --ace-footer-height: 207px;
+
+  /* Content width: 1232px (1440px artboard - 2 x 104px padding) */
+  --ace-content-padding: 104px;
+}
+
+/* --------------------------------------------------------------------------
+   4. Body & Base Overrides
+   --------------------------------------------------------------------------
+   Dawn defaults body text to rgba(foreground, 0.75). Ace designs use full
+   opacity text. Override here.
+   -------------------------------------------------------------------------- */
+
+body {
+  color: var(--ace-text-blue);
+  font-family: var(--ace-font-body);
+  font-weight: 400;
+  font-size: 1.5rem; /* 15px at Dawn's 10px root */
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. Typography Utility Classes
+   --------------------------------------------------------------------------
+   Named to match Figma style names. All Geoform styles are uppercase.
+   All Zodiak styles are sentence case.
+   -------------------------------------------------------------------------- */
+
+/* Display - Geoform Medium, uppercase */
+
+.ace-display-super {
+  font-family: var(--ace-font-heading);
+  font-weight: 500;
+  font-size: 100px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ace-display-large {
+  font-family: var(--ace-font-heading);
+  font-weight: 500;
+  font-size: 70px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ace-display-1 {
+  font-family: var(--ace-font-heading);
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* UI labels - Geoform Medium, uppercase */
+
+.ace-display-3 {
+  font-family: var(--ace-font-heading);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ace-cta-text {
+  font-family: var(--ace-font-heading);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ace-fine-print {
+  font-family: var(--ace-font-heading);
+  font-weight: 500;
+  font-size: 9px;
+  line-height: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Body - Zodiak Regular, sentence case */
+
+.ace-paragraph {
+  font-family: var(--ace-font-body);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.ace-paragraph-small {
+  font-family: var(--ace-font-body);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+/* Heading overrides for Dawn's default h1-h6 */
+
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--ace-font-heading);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ace-text-blue);
+}
+
+/* --------------------------------------------------------------------------
+   6. Button Variants
+   --------------------------------------------------------------------------
+   Four variants from Figma (node 904:746).
+   Height: 40px, padding: 12px 20px, radius: 8px, CTA text style.
+   -------------------------------------------------------------------------- */
+
+.ace-btn {
+  height: var(--ace-button-height);
+  padding: 12px 20px;
+  border-radius: var(--ace-radius-button);
+  font-family: var(--ace-font-heading);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.ace-btn--primary {
+  background-color: var(--ace-secondary-red);
+  border: none;
+  color: var(--ace-black);
+}
+
+.ace-btn--primary:hover {
+  background-color: var(--ace-button-hover);
+}
+
+.ace-btn--secondary {
+  background-color: transparent;
+  border: 1px solid var(--ace-secondary-red);
+  color: var(--ace-black);
+}
+
+.ace-btn--secondary:hover {
+  background-color: var(--ace-secondary-red);
+  color: var(--ace-black);
+}
+
+.ace-btn--style4 {
+  background-color: transparent;
+  border: 1px solid var(--ace-button-hover);
+  color: var(--ace-black);
+}
+
+.ace-btn--style4:hover {
+  background-color: var(--ace-button-hover);
+  color: var(--ace-black);
+}
+
+/* Dawn button overrides - make Dawn's .button class match Ace brand */
+
+.button,
+button.button,
+a.button {
+  --alpha-button-background: 1;
+  border-radius: var(--ace-radius-button);
+  font-family: var(--ace-font-heading);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   7. Link Styles
+   -------------------------------------------------------------------------- */
+
+a {
+  color: var(--ace-primary-blue);
+}
+
+a:hover {
+  color: var(--ace-text-blue);
+}
+
+/* --------------------------------------------------------------------------
+   8. Responsive Typography
+   --------------------------------------------------------------------------
+   Scale display sizes down for mobile. Figma mobile designs show smaller
+   headline sizes.
+   -------------------------------------------------------------------------- */
+
+@media screen and (max-width: 749px) {
+  .ace-display-super {
+    font-size: 48px;
+  }
+
+  .ace-display-large {
+    font-size: 36px;
+  }
+
+  .ace-display-1 {
+    font-size: 28px;
+  }
+}

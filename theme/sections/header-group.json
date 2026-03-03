@@ -4,13 +4,19 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "show_line_separator": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      },
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "New York's Premier Event Rental Company Since 1984",
             "text_alignment": "center",
-            "color_scheme": "scheme-1",
             "link": ""
           }
         }
@@ -28,12 +34,12 @@
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 16,
+        "padding_bottom": 16
       }
     }
   },

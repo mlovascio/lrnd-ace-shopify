@@ -5,45 +5,37 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "footer-0": {
-          "type": "link_list",
+        "footer-brand": {
+          "type": "brand_information",
           "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
+            "show_social": false
           }
         },
-        "footer-1": {
+        "footer-links": {
           "type": "link_list",
           "settings": {
-            "heading": "Info",
+            "heading": "",
             "menu": "footer"
-          }
-        },
-        "footer-2": {
-          "type": "text",
-          "settings": {
-            "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
           }
         }
       },
       "block_order": [
-        "footer-0",
-        "footer-1",
-        "footer-2"
+        "footer-brand",
+        "footer-links"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-3",
         "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
+        "newsletter_heading": "Join our newsletter",
         "show_social": true,
+        "enable_follow_on_shop": false,
         "enable_country_selector": false,
         "enable_language_selector": false,
-        "payment_enable": true,
+        "payment_enable": false,
         "show_policy": false,
-        "margin_top": 48,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "margin_top": 0,
+        "padding_top": 40,
+        "padding_bottom": 24
       }
     }
   },

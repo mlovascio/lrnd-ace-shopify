@@ -1,0 +1,186 @@
+/* ==========================================================================
+   Ace Party & Tent Rental - Header & Promo Bar Brand Overrides
+   Source: Figma Navigation (904:688) and Promo Bar (904:532)
+   ==========================================================================
+   Overrides Dawn's built-in header and announcement-bar sections to match
+   the Ace brand design. Loaded conditionally by the header section.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Promo Bar (Dawn's announcement-bar)
+   --------------------------------------------------------------------------
+   Figma: 40px height, CTA text (Geoform 12px uppercase 0.04em)
+   Three color variants handled via Dawn color schemes:
+     - Default (scheme-2/custom): yellow bg, blue text
+     - Variant 2: red bg, black text
+     - Variant 3: blue bg, white text
+   -------------------------------------------------------------------------- */
+
+.announcement-bar-section .utility-bar {
+  min-height: var(--ace-promo-height);
+  max-height: var(--ace-promo-height);
+  display: flex;
+  align-items: center;
+}
+
+.announcement-bar-section .utility-bar__grid {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.announcement-bar__message {
+  font-family: var(--ace-font-heading);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0;
+  min-height: auto;
+}
+
+.announcement-bar__message.h5 {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.announcement-bar__link {
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   2. Navigation Bar
+   --------------------------------------------------------------------------
+   Figma: 80px height, white bg, logo left, links center, icons right
+   -------------------------------------------------------------------------- */
+
+.header-wrapper {
+  border-bottom: none;
+}
+
+.header-wrapper--border-bottom {
+  border-bottom: 1px solid var(--ace-bg-gray);
+}
+
+.header {
+  min-height: var(--ace-nav-height);
+  align-items: center;
+}
+
+/* Nav link styling */
+.header__inline-menu .list-menu__item--link,
+.header__inline-menu .header__menu-item {
+  font-family: var(--ace-font-heading);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ace-primary-blue);
+}
+
+.header__inline-menu .list-menu__item--link:hover {
+  color: var(--ace-text-blue);
+}
+
+/* Nav link gap - Figma shows 24px between links */
+.header__inline-menu .list-menu--inline > li {
+  margin-right: 2.4rem;
+}
+
+.header__inline-menu .list-menu--inline > li:last-child {
+  margin-right: 0;
+}
+
+/* Header icons (search, account, cart) */
+.header__icon {
+  color: var(--ace-primary-blue);
+}
+
+.header__icon:hover {
+  color: var(--ace-text-blue);
+}
+
+/* Cart count bubble - brand red */
+.cart-count-bubble {
+  background-color: var(--ace-secondary-red);
+  color: var(--ace-black);
+  font-family: var(--ace-font-heading);
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+/* Logo wrapper - ensure 183px as per Figma */
+.header__heading-logo-wrapper {
+  max-width: 183px;
+}
+
+.header__heading-logo {
+  max-width: 183px;
+}
+
+/* Dropdown menu styling */
+.header__submenu .header__menu-item,
+.header__submenu .list-menu__item--link {
+  font-family: var(--ace-font-body);
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ace-text-blue);
+}
+
+.header__submenu .header__menu-item:hover,
+.header__submenu .list-menu__item--link:hover {
+  color: var(--ace-primary-blue);
+}
+
+/* Mega menu - if used */
+.mega-menu__content {
+  font-family: var(--ace-font-body);
+}
+
+.mega-menu__link {
+  font-family: var(--ace-font-body);
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ace-text-blue);
+}
+
+/* --------------------------------------------------------------------------
+   3. Mobile Drawer Styling
+   -------------------------------------------------------------------------- */
+
+.menu-drawer__menu-item,
+.menu-drawer__menu-item--active {
+  font-family: var(--ace-font-heading);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ace-primary-blue);
+}
+
+.menu-drawer__submenu .menu-drawer__menu-item {
+  font-family: var(--ace-font-body);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Sticky Header Adjustments
+   --------------------------------------------------------------------------
+   Keep brand styling when header becomes sticky on scroll.
+   -------------------------------------------------------------------------- */
+
+.shopify-section-header-sticky .header {
+  min-height: 60px;
+}
+
+.shopify-section-header-sticky .header__heading-logo-wrapper {
+  max-width: 140px;
+}

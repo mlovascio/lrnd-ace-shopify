@@ -1,0 +1,245 @@
+/* ==========================================================================
+   Ace Party & Tent Rental - Footer Brand Overrides
+   Source: Figma Desktop Footer (904:359) and Mobile Footer (904:1291)
+   ==========================================================================
+   Overrides Dawn's built-in footer section to match Ace's Figma design:
+   - Blue gradient background (#0c6bcd to #387fd7)
+   - Top row: Logo + address (left) | Newsletter (right)
+   - Divider line
+   - Bottom row: Copyright (left) | Nav links (center) | Social (right)
+   - All text white
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Footer Container - Gradient Background
+   -------------------------------------------------------------------------- */
+
+.footer {
+  background: var(--ace-gradient-footer);
+  color: var(--ace-white);
+  margin-top: 0;
+}
+
+/* Override Dawn's color scheme vars within footer context */
+.footer.color-scheme-1,
+.footer.color-scheme-2,
+.footer.color-scheme-3,
+.footer[class*="color-"] {
+  --color-foreground: 255, 255, 255;
+  --color-background: 12, 107, 205;
+  --color-link: 255, 255, 255;
+  background: var(--ace-gradient-footer);
+}
+
+/* --------------------------------------------------------------------------
+   2. Top Content Area - Logo/Address + Newsletter
+   -------------------------------------------------------------------------- */
+
+.footer__content-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  padding-bottom: 24px;
+}
+
+@media screen and (max-width: 749px) {
+  .footer__content-top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* Footer blocks - remove Dawn's default grid to use our 2-col layout */
+.footer__blocks-wrapper {
+  display: contents;
+}
+
+/* Brand info block - logo + address */
+.footer-block__brand-info {
+  color: var(--ace-white);
+}
+
+.footer-block__brand-info .rte,
+.footer-block__brand-info p {
+  font-family: var(--ace-font-body);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ace-white);
+}
+
+/* Footer block headings */
+.footer-block__heading {
+  font-family: var(--ace-font-heading);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ace-white);
+}
+
+/* --------------------------------------------------------------------------
+   3. Newsletter Field
+   --------------------------------------------------------------------------
+   Figma: 387px x 59px, black bg 30% opacity, rounded 8px
+   Label: "Join our newsletter" (Zodiak 12px, white)
+   Placeholder: "Email address" (Zodiak 15px, white 40%)
+   Submit: caret icon
+   -------------------------------------------------------------------------- */
+
+.footer-block--newsletter {
+  justify-self: end;
+}
+
+@media screen and (max-width: 749px) {
+  .footer-block--newsletter {
+    justify-self: stretch;
+  }
+}
+
+.footer__newsletter .newsletter-form__field-wrapper .field {
+  max-width: 387px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: var(--ace-radius-button);
+  border: none;
+}
+
+.footer__newsletter .field__input {
+  background: transparent;
+  border: none;
+  color: var(--ace-white);
+  font-family: var(--ace-font-body);
+  font-size: 15px;
+  height: 59px;
+}
+
+.footer__newsletter .field__input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--ace-font-body);
+  font-size: 15px;
+}
+
+.footer__newsletter .field__label {
+  font-family: var(--ace-font-body);
+  font-size: 12px;
+  color: var(--ace-white);
+}
+
+.footer__newsletter .newsletter-form__button {
+  color: var(--ace-white);
+  background: transparent;
+  border: none;
+}
+
+.footer__newsletter .newsletter-form__button:hover {
+  opacity: 0.7;
+}
+
+.footer__newsletter .footer-block__heading {
+  color: var(--ace-white);
+}
+
+/* --------------------------------------------------------------------------
+   4. Divider
+   -------------------------------------------------------------------------- */
+
+.footer__content-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   5. Bottom Row - Copyright | Links | Social
+   -------------------------------------------------------------------------- */
+
+.footer__content-bottom-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Copyright */
+.footer__copyright {
+  font-family: var(--ace-font-body);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--ace-white);
+}
+
+.footer__copyright a,
+.footer__copyright .copyright__content {
+  color: var(--ace-white);
+}
+
+/* Hide Dawn's "Powered by Shopify" */
+.footer__copyright .copyright__content + .copyright__content {
+  display: none;
+}
+
+/* Footer nav links */
+.footer-block--menu .list-menu__item--link,
+.footer__content-bottom a {
+  font-family: var(--ace-font-heading);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ace-white);
+}
+
+.footer-block--menu .list-menu__item--link:hover,
+.footer__content-bottom a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Social icons */
+.footer__list-social .icon {
+  color: var(--ace-white);
+  width: 16px;
+  height: 16px;
+}
+
+.footer__list-social .list-social__link:hover .icon {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* --------------------------------------------------------------------------
+   6. Footer Link Lists - Inline Row
+   --------------------------------------------------------------------------
+   Figma shows footer links in a single inline row, not columns.
+   Override Dawn's default column grid layout.
+   -------------------------------------------------------------------------- */
+
+.footer .footer-block--menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer .footer-block--menu ul li {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   7. Mobile Footer
+   --------------------------------------------------------------------------
+   Figma (904:1291): Stacked layout, centered text
+   -------------------------------------------------------------------------- */
+
+@media screen and (max-width: 749px) {
+  .footer__content-bottom-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer .footer-block--menu ul {
+    justify-content: center;
+  }
+
+  .footer__list-social {
+    justify-content: center;
+  }
+}
